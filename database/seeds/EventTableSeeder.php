@@ -23,7 +23,7 @@ class EventTableSeeder extends Seeder
                 'notes' => 'Kwitansi belum diambil',
                 'is_done' => 0],
             
-                ['event_type_id' =>2,
+                ['event_type_id' => 2,
                 'school_id' => 2,
                 'date_start' => '2019-09-22',
                 'date_finish' => '2019-09-22',
