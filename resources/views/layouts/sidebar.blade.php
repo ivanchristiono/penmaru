@@ -1,3 +1,7 @@
+@if(Auth::guest())
+
+@else
+
 <!-- MENU LEFT SIDEBAR -->
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="main-menu-content">
@@ -26,3 +30,5 @@
       </ul>
     </div>
   </div>
+
+  @endif

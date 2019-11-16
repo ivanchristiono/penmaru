@@ -39,19 +39,21 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
-<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+<body class="vertical-layout vertical-menu 2-columns fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
 
 
 
-@if (Auth::guest())
   @include('layouts.fixed_top')
   @include('layouts.sidebar')
   @yield('content')
   
-@endif
     <!-- </div> -->
 
     <!-- Scripts -->
+
+  @if(Auth::guest())
+
+  @else
     <footer class="footer footer-static footer-light navbar-border">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
           <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2019 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
@@ -60,11 +62,7 @@
         </p>
   
       </footer>
-
-
-
-        
-
+@endif
 
       <script src="/js/app.js"></script> <!--DARI LARAVEL -->
       <!-- BEGIN VENDOR JS-->
@@ -92,9 +90,9 @@
       <script src="{{asset('app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
       <!-- END STACK JS-->
       <!-- BEGIN PAGE LEVEL JS-->
-      <script src="{{asset('app-assets/js/scripts/pages/dashboard-analytics.js" type="text/javascript"></script>
+      <script src="{{asset('app-assets/js/scripts/pages/dashboard-analytics.js')}}" type="text/javascript"></script>
       <!-- END PAGE LEVEL JS-->
+
+    
     </body>
-    </html>
-</body>
 </html>
