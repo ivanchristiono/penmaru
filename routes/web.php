@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', function(){
     return view('layouts.app');
 });
+
+Route::group(['prefix'=>'member', 'middleware'=>['auth']], function () {
+    Route::resource('events','EventController');
+ });

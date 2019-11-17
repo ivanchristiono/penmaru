@@ -13,7 +13,7 @@
         <li class=" nav-item"><a href="index.html"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span><span class="badge badge badge-primary badge-pill float-right mr-2">3</span></a>
           <ul class="menu-content">
             <li>
-                <a class="menu-item" href="dashboard-ecommerce.html">Events</a>
+                <a class="menu-item" href="{{route('events.index')}}">Events</a>
             </li>
             <li class="active">
                 <a class="menu-item" href="dashboard-analytics.html">Sekolah</a>
