@@ -13,7 +13,7 @@
                         <h2 class="panel-title">Events</h2>
                     </div>
                     <div class="panel-body">
-                        <p> <a class="btn btn-primary" href="{{ url('/admin/books/create') }}">Tambah</a>
+                        <p> <a class="btn btn-primary" href="{{ url('/admin/events/create') }}">Tambah</a>
                         </p>
                         {!! $html->table(['class'=>'table-striped table-responsive']) !!}
                     </div>

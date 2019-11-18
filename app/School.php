@@ -12,4 +12,9 @@ class School extends Model
 
         return $this->belongsTo('App\City');
     }
+
+    public function event(){
+
+        return $this->hasMany('App\Event');
+    }
 }

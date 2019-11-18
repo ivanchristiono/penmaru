@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Yajra\Datatables;
-use Yajra\Datatables\Facades;
 use Yajra\Datatables\Html\Builder;
+use Yajra\Datatables\Datatables;
+
+use App\EventType;
+use App\School;
+use App\Event;
 
 class EventController extends Controller
 {
@@ -18,25 +21,31 @@ class EventController extends Controller
     {
         {
             if($request->ajax()) {
-                $events = Event::with('event_type,', 'school');
+                $events = Event::with('event_type,','school')->get();
                 return Datatables::of($events)
                     ->addColumn('action', function($event){
                         return view('datatable._action', [
                             'model'             => $event,
                             'form_url'          => route('events.destroy', $event->id),
                             'edit_url'          => route('events.edit', $event->id),
-                            'confirm_message'   => 'Yakin mau menghapus ' . $event->school('name') . '?'
+                            'confirm_message'   => 'Yakin mau menghapus ' . $event->id . '?'
                         ]);
                     })->make(true);
             }
     
             $html = $htmlBuilder
-                ->addColumn(['data' => 'title', 'name' => 'title', 'title' => 'Judul'])
-                ->addColumn(['data' =>'amount', 'name' => 'amount', 'title' => 'Jumlah'])
-                ->addColumn(['data' => 'author.name', 'name' => 'author.name', 'title' => 'Penulis'])
+                ->addColumn(['data' => 'event_type_id', 'name' => 'event_type_id', 'title' => 'Tipe Acara'])
+                ->addColumn(['data' => 'school_id', 'name' => 'school_id', 'title' => 'Sekolah'])
+                ->addColumn(['data' => 'date_start', 'name' => 'date_start', 'title' => 'Tanggal Mulai'])
+                ->addColumn(['data' => 'date_finish', 'name' => 'date_finish', 'title' => 'Tanggal Selesai'])
+                ->addColumn(['data' => 'time_at', 'name' => 'time_at', 'title' => 'Jam Mulai'])
+                ->addColumn(['data' => 'time_finish', 'name' => 'time_finish', 'title' => 'Jam Selesai'])
+                ->addColumn(['data' => 'staff_name', 'name' => 'staff_name', 'title' => 'Petugas'])
+                ->addColumn(['data' => 'location', 'name' => 'location', 'title' => 'Tempat Lokasi'])
+                ->addColumn(['data' =>'notes', 'name' => 'notes', 'title' => 'Keterangan'])
                 ->addColumn(['data' => 'action', 'name' => 'action', 'title'=>'', 'orderable'=>'false', 'searchable'=>'false']);
             
-                return view('events.index')->with(compact('html'));
+                return view('events.index', compact('html'));
         }
     }
 

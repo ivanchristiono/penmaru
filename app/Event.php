@@ -8,7 +8,7 @@ class Event extends Model
 {
     protected $fillable = ['event_type_id', 'school_id', 'date_start', 'date_finish', 'time_at', 'time_until', 'staff_name', 'location', 'notes', 'is_done'];
 
-    public function eventType(){
+    public function event_type(){
 
         return $this->belongsTo('App\EventType');
     }

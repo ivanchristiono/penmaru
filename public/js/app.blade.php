@@ -4,13 +4,12 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>{{ config('app.name', 'Laravel') }}</title>
 
-  <link href="{{asset('css/jquery.dataTables.css')}}" rel="stylesheet" type="text/css">
-  <link href="{{asset('css/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css">
+  <link href="/css/jquery.dataTables.css" rel="stylesheet">
+  <link href="/css/dataTables.bootstrap.css" rel="stylesheet">
 
   <link rel="apple-touch-icon" href="{{asset('app-assets/images/ico/apple-icon-120.png')}}">
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/ico/favicon.ico')}}">
@@ -31,7 +30,7 @@
   <!-- link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/users.css')-->
   <!-- END Page Level CSS-->
   <!-- BEGIN Custom CSS-->
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/assets/css/style.css')}}">
   <!-- END Custom CSS-->
 
   <!-- Scripts -->
@@ -67,16 +66,14 @@
   
       </footer>
 @endif
-      
-      <script src="{{asset('js/app.js')}}"></script> <!--DARI LARAVEL -->
-      <!-- BEGIN VENDOR JS-->
-      <script src="{{asset('app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script> 
-      <!-- BEGIN VENDOR JS-->  
-      <script src="{{asset('js/bootstrap.min.js') }}"></script>
-      <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-      <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
 
-      
+      <script src="/js/app.js"></script> <!--DARI LARAVEL -->
+      <script src="/js/jquery.dataTables.min.js"></script>
+      <script src="/js/dataTables.bootstrap.min.js"></script>
+
+      <!-- BEGIN VENDOR JS-->
+      <script src="{{asset('app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
+      <!-- BEGIN VENDOR JS-->
       <!-- BEGIN PAGE VENDOR JS-->
       <script src="{{asset('app-assets/vendors/js/extensions/jquery.knob.min.js')}}" type="text/javascript"></script>
       <script src="{{asset('app-assets/js/scripts/extensions/knob.js')}}" type="text/javascript"></script>
@@ -99,9 +96,8 @@
       <script src="{{asset('app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
       <!-- END STACK JS-->
       <!-- BEGIN PAGE LEVEL JS-->
-      
+      <script src="{{asset('app-assets/js/scripts/pages/dashboard-analytics.js')}}" type="text/javascript"></script>
       <!-- END PAGE LEVEL JS-->
-      @yield('scripts')
 
     
     </body>
