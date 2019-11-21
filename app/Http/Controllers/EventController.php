@@ -21,8 +21,9 @@ class EventController extends Controller
     {
         {
             if($request->ajax()) {
-                $events = Event::with('event_type,','school')->get();
+                $events = Event::with('school', 'event_type')->get();
                 return Datatables::of($events)
+                    ->addIndexColumn()
                     ->addColumn('action', function($event){
                         return view('datatable._action', [
                             'model'             => $event,
@@ -34,12 +35,13 @@ class EventController extends Controller
             }
     
             $html = $htmlBuilder
-                ->addColumn(['data' => 'event_type_id', 'name' => 'event_type_id', 'title' => 'Tipe Acara'])
-                ->addColumn(['data' => 'school_id', 'name' => 'school_id', 'title' => 'Sekolah'])
+                ->addColumn(['data' => 'DT_Row_Index', 'name' => 'nomor', 'title' => 'No.',  'orderable'=>'false'])
+                ->addColumn(['data' => 'event_type.name', 'name' => 'event_type.name', 'title' => 'Tipe Acara'])
+                ->addColumn(['data' => 'school.name', 'name' => 'school.name', 'title' => 'Sekolah'])
                 ->addColumn(['data' => 'date_start', 'name' => 'date_start', 'title' => 'Tanggal Mulai'])
                 ->addColumn(['data' => 'date_finish', 'name' => 'date_finish', 'title' => 'Tanggal Selesai'])
                 ->addColumn(['data' => 'time_at', 'name' => 'time_at', 'title' => 'Jam Mulai'])
-                ->addColumn(['data' => 'time_finish', 'name' => 'time_finish', 'title' => 'Jam Selesai'])
+                ->addColumn(['data' => 'time_until', 'name' => 'time_until', 'title' => 'Jam Selesai'])
                 ->addColumn(['data' => 'staff_name', 'name' => 'staff_name', 'title' => 'Petugas'])
                 ->addColumn(['data' => 'location', 'name' => 'location', 'title' => 'Tempat Lokasi'])
                 ->addColumn(['data' =>'notes', 'name' => 'notes', 'title' => 'Keterangan'])

@@ -1,4 +1,6 @@
+<?php if(Auth::guest()): ?>
 
+<?php else: ?>
  <!-- fixed-top-->
  <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-dark navbar-shadow">
     <div class="navbar-wrapper">
@@ -341,4 +343,5 @@
       </div>
     </div>
   </nav>
+  <?php endif; ?>
   <!-- ////////////////////////////////////////////////////////////////////////////-->

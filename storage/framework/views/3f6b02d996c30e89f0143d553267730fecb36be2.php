@@ -1,3 +1,7 @@
+<?php if(Auth::guest()): ?>
+
+<?php else: ?>
+
 <!-- MENU LEFT SIDEBAR -->
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="main-menu-content">
@@ -9,7 +13,7 @@
         <li class=" nav-item"><a href="index.html"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span><span class="badge badge badge-primary badge-pill float-right mr-2">3</span></a>
           <ul class="menu-content">
             <li>
-                <a class="menu-item" href="dashboard-ecommerce.html">Events</a>
+                <a class="menu-item" href="<?php echo e(route('events.index')); ?>">Events</a>
             </li>
             <li class="active">
                 <a class="menu-item" href="dashboard-analytics.html">Sekolah</a>
@@ -26,3 +30,5 @@
       </ul>
     </div>
   </div>
+
+  <?php endif; ?>

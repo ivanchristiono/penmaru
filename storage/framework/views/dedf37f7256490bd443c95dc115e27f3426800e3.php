@@ -4,9 +4,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
   <title><?php echo e(config('app.name', 'Laravel')); ?></title>
+
+  <link href="<?php echo e(asset('css/jquery.dataTables.css')); ?>" rel="stylesheet" type="text/css">
+  <link href="<?php echo e(asset('css/dataTables.bootstrap.css')); ?>" rel="stylesheet" type="text/css">
 
   <link rel="apple-touch-icon" href="<?php echo e(asset('app-assets/images/ico/apple-icon-120.png')); ?>">
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo e(asset('app-assets/images/ico/favicon.ico')); ?>">
@@ -27,7 +31,7 @@
   <!-- link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/users.css')-->
   <!-- END Page Level CSS-->
   <!-- BEGIN Custom CSS-->
-  <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/assets/css/style.css')); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/style.css')); ?>">
   <!-- END Custom CSS-->
 
   <!-- Scripts -->
@@ -39,19 +43,21 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
-<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+<body class="vertical-layout vertical-menu 2-columns fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
 
 
 
-<?php if(Auth::guest()): ?>
   <?php echo $__env->make('layouts.fixed_top', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
   <?php echo $__env->make('layouts.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
   <?php echo $__env->yieldContent('content'); ?>
   
-<?php endif; ?>
     <!-- </div> -->
 
     <!-- Scripts -->
+
+  <?php if(Auth::guest()): ?>
+
+  <?php else: ?>
     <footer class="footer footer-static footer-light navbar-border">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
           <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2019 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
@@ -60,16 +66,17 @@
         </p>
   
       </footer>
-
-
-
-        
-
-
-      <script src="/js/app.js"></script> <!--DARI LARAVEL -->
+<?php endif; ?>
+      
+      <script src="<?php echo e(asset('js/app.js')); ?>"></script> <!--DARI LARAVEL -->
       <!-- BEGIN VENDOR JS-->
-      <script src="<?php echo e(asset('app-assets/vendors/js/vendors.min.js')); ?>" type="text/javascript"></script>
-      <!-- BEGIN VENDOR JS-->
+      <script src="<?php echo e(asset('app-assets/vendors/js/vendors.min.js')); ?>" type="text/javascript"></script> 
+      <!-- BEGIN VENDOR JS-->  
+      <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+      <script src="<?php echo e(asset('js/jquery.dataTables.min.js')); ?>"></script>
+      <script src="<?php echo e(asset('js/dataTables.bootstrap.min.js')); ?>"></script>
+
+      
       <!-- BEGIN PAGE VENDOR JS-->
       <script src="<?php echo e(asset('app-assets/vendors/js/extensions/jquery.knob.min.js')); ?>" type="text/javascript"></script>
       <script src="<?php echo e(asset('app-assets/js/scripts/extensions/knob.js')); ?>" type="text/javascript"></script>
@@ -92,9 +99,10 @@
       <script src="<?php echo e(asset('app-assets/js/scripts/customizer.js')); ?>" type="text/javascript"></script>
       <!-- END STACK JS-->
       <!-- BEGIN PAGE LEVEL JS-->
-      <script src="{{asset('app-assets/js/scripts/pages/dashboard-analytics.js" type="text/javascript"></script>
+      
       <!-- END PAGE LEVEL JS-->
+      <?php echo $__env->yieldContent('scripts'); ?>
+
+    
     </body>
-    </html>
-</body>
 </html>
