@@ -11,17 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+//Route::get('/dashboard', 'MyController@showAbout');
+Route::get('/', 'HomeController@index');
 Route::get('/dashboard', function(){
     return view('layouts.app');
 });
 
-Route::group(['prefix'=>'member', 'middleware'=>['auth']], function () {
+Route::group(['prefix'=>'member', 'middleware'=>['auth', 'role:member']], function () {
     Route::resource('events','EventController');
+    Route::resource('schools','SchoolController');
+    Route::resource('cities','CityController');
+ });
+
+ Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function () {
+    
  });

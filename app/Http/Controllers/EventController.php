@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Html\Builder;
 use Yajra\Datatables\Datatables;
+use App\Role;
 
 use App\EventType;
 use App\School;
@@ -19,7 +20,6 @@ class EventController extends Controller
      */
     public function index(request $request, Builder $htmlBuilder)
     {
-        {
             if($request->ajax()) {
                 $events = Event::with('school', 'event_type')->get();
                 return Datatables::of($events)
@@ -48,7 +48,7 @@ class EventController extends Controller
                 ->addColumn(['data' => 'action', 'name' => 'action', 'title'=>'', 'orderable'=>'false', 'searchable'=>'false']);
             
                 return view('events.index', compact('html'));
-        }
+        
     }
 
     /**

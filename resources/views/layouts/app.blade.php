@@ -9,15 +9,16 @@
 
   <title>{{ config('app.name', 'Laravel') }}</title>
 
+  <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/vendors.css')}}">
   <link href="{{asset('css/jquery.dataTables.css')}}" rel="stylesheet" type="text/css">
-  <link href="{{asset('css/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('app-assets/vendors/css/tables/datatable/datatables.min.css')}}" rel="stylesheet" type="text/css">
+  <!-- <link href="{{asset('css/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css"> -->
 
   <link rel="apple-touch-icon" href="{{asset('app-assets/images/ico/apple-icon-120.png')}}">
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/ico/favicon.ico')}}">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
   rel="stylesheet">
   <!-- BEGIN VENDOR CSS-->
-<link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/vendors.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/charts/morris.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/extensions/unslider.css')}}">
@@ -70,11 +71,14 @@
       
       <script src="{{asset('js/app.js')}}"></script> <!--DARI LARAVEL -->
       <!-- BEGIN VENDOR JS-->
-      <script src="{{asset('app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script> 
+      <script src="{{asset('app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
       <!-- BEGIN VENDOR JS-->  
       <script src="{{asset('js/bootstrap.min.js') }}"></script>
-      <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-      <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
+      <script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.min.js')}}" type="text/javascript"></script>
+      <script src="{{asset('app-assets/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
+      <!-- <script src="{{asset('js/jquery.dataTables.min.js')}}"></script> -->
+      <!-- <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script> -->
+      
 
       
       <!-- BEGIN PAGE VENDOR JS-->

@@ -11,12 +11,12 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#">Events</a>
+                <li class="breadcrumb-item"><a href="#">Kota</a>
                 </li>
               </ol>
             </div>
           </div>
-          <h3 class="content-header-title mb-0">Events</h3>
+          <h3 class="content-header-title mb-0">Kota</h3>
         </div>
         <div class="content-header-right col-md-6 col-12">
           <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
@@ -37,7 +37,7 @@
             <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                <h4 class="card-title">List Event</h4>
+                <h4 class="card-title">List Kota</h4>
                 <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                 <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="card-content collapse show">
                 <div class="card-body card-dashboard">
-                        <p> <a class="btn btn-primary" href="{{ url('/member/events/create') }}">Tambah</a>
+                        <p> <a class="btn btn-primary" href="{{ url('/member/cities/create') }}">Tambah</a>
                         </p>
                         <div class="table-responsive">
                             {!! $html->table(['class'=>'table table-striped table-bordered']) !!}
