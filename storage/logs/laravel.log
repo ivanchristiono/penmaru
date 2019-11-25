@@ -9658,3 +9658,6 @@ Stack trace:
 #42 D:\xampp\htdocs\penmaru\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #43 D:\xampp\htdocs\penmaru\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #44 {main}  
+[2019-11-25 07:50:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Author' not found' in D:\xampp\htdocs\penmaru\storage\framework\views\e783fd31204c08f998a7e9894cc00a7f69994635.php:16
+Stack trace:
+#0 {main}  
