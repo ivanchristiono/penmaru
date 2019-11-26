@@ -1,4 +1,42 @@
 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+    {!! Form::label('eventType', 'Tipe Event', ['class'=>'col-md-2 control-label']) !!}
+    <div class="col-md-4">
+        {!! Form::select('event_type_id', [''=>'']+App\EventType::pluck('name','id')->all(), null, [
+        'class'=>'js-selectize form-control',
+        'placeholder' => 'Pilih Tipe Event'
+        ]) !!}
+        {!! $errors->first('event_type_id', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+       
+<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+    {!! Form::label('school', 'Sekolah', ['class'=>'col-md-2 control-label']) !!}
+    <div class="col-md-4">
+        {!! Form::select('event_type_id', [''=>'']+App\School::pluck('name','id')->all(), null, [
+        'class'=>'select2 form-control',
+        'placeholder' => 'Pilih Tipe Event'
+        ]) !!}
+        {!! $errors->first('event_type_id', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+
+
+<div class="form-group">
+<label>Basic Date Range Picker</label>
+    <div class='col-md-6 input-group date'>
+        <input type='text' class="form-control daterange">
+        <div class="input-group-append">
+        <span class="input-group-text">
+            <span class="fa fa-calendar"></span>
+        </span>
+        </div>
+    </div>
+    <small class="text-muted">The Date Range Picker is attached to a text input. It will
+        use the current value of the input to initialize, and update
+        the input if new dates are chosen.</small>
+</div>
+      
+<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
     {!! Form::label('title', 'Judul', ['class'=>'col-md-2 control-label']) !!}
     <div class="col-md-4">
         {!! Form::text('title', null, ['class'=>'form-control']) !!}
