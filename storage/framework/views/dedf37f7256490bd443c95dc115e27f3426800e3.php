@@ -9,7 +9,7 @@
 
   <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
-  <link rel="stylesheet" type="text/css" href="<?php echo e(asset('app-assets/css/vendors.css')); ?>">
+  <link href="<?php echo e(asset('app-assets/css/vendors.css')); ?>" rel= "stylesheet" type="text/css">
   <link href="<?php echo e(asset('css/jquery.dataTables.css')); ?>" rel="stylesheet" type="text/css">
   <link href="<?php echo e(asset('app-assets/vendors/css/tables/datatable/datatables.min.css')); ?>" rel="stylesheet" type="text/css">
   <!-- <link href="<?php echo e(asset('css/dataTables.bootstrap.css')); ?>" rel="stylesheet" type="text/css"> -->
@@ -29,12 +29,14 @@
   <!-- END STACK CSS-->
   <!-- BEGIN Page Level CSS-->
   <link rel="stylesheet" type="text/css" href="<?php echo e(asset('app-assets/css/core/menu/menu-types/vertical-menu.css')); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo e(asset('app-assets/css/core/colors/palette-gradient.css')); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo e(asset('app-assets/css/plugins/pickers/daterange/daterange.css')); ?>">
   <!-- link(rel='stylesheet', type='text/css', href=app_assets_path+'/css'+rtl+'/pages/users.css')-->
   <!-- END Page Level CSS-->
   <!-- BEGIN Custom CSS-->
   <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/style.css')); ?>">
   <!-- END Custom CSS-->
+  
 
   <!-- Scripts -->
   <script>
@@ -70,17 +72,15 @@
       </footer>
 <?php endif; ?>
       
-      <script src="<?php echo e(asset('js/app.js')); ?>"></script> <!--DARI LARAVEL -->
+      <!-- <script src="<?php echo e(asset('js/app.js')); ?>"></script> <!--DARI LARAVEL --> -->
       <!-- BEGIN VENDOR JS-->
       <script src="<?php echo e(asset('app-assets/vendors/js/vendors.min.js')); ?>" type="text/javascript"></script>
       <!-- BEGIN VENDOR JS-->  
-      <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+      <!-- <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script> -->
       <script src="<?php echo e(asset('app-assets/vendors/js/tables/datatable/datatables.min.js')); ?>" type="text/javascript"></script>
       <script src="<?php echo e(asset('app-assets/js/scripts/tables/datatables/datatable-basic.js')); ?>" type="text/javascript"></script>
       <!-- <script src="<?php echo e(asset('js/jquery.dataTables.min.js')); ?>"></script> -->
       <!-- <script src="<?php echo e(asset('js/dataTables.bootstrap.min.js')); ?>"></script> -->
-      
-
       
       <!-- BEGIN PAGE VENDOR JS-->
       <script src="<?php echo e(asset('app-assets/vendors/js/forms/select/select2.full.min.js')); ?>" type="text/javascript"></script>

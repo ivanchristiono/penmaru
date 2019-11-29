@@ -51,8 +51,10 @@
                 <div class="card-body card-dashboard">
                     {!! Form::open(['url' => route('events.store'),
                     'method' => 'post', 'files'=>'true', 'class'=>'form-horizontal']) !!}
+                 
                     @include('events._form')
                     {!! Form::close() !!}
+                    
                 </div>
                 </div>
             </div>

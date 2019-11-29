@@ -66,7 +66,6 @@
 
     @endsection
 
-
 @section('scripts')
     {!! $html->scripts() !!}
 @endsection

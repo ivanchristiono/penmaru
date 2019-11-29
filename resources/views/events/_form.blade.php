@@ -20,22 +20,55 @@
     </div>
 </div>
 
-
-<div class="form-group">
-<label>Basic Date Range Picker</label>
-    <div class='col-md-6 input-group date'>
-        <input type='text' class="form-control daterange">
+<div class="form-group form-inline">
+<label>Tanggal Mulai</label>
+    <div class="col-md-6 input-group" id='datetimepicker8'>
+        <input type='text' name="mulaiEvent" class="form-control" />
         <div class="input-group-append">
         <span class="input-group-text">
             <span class="fa fa-calendar"></span>
         </span>
         </div>
     </div>
-    <small class="text-muted">The Date Range Picker is attached to a text input. It will
-        use the current value of the input to initialize, and update
-        the input if new dates are chosen.</small>
 </div>
-      
+<div class="form-group form-inline">
+<label>Tanggal Selesai</label>
+    <div class="col-md-6 input-group" id='datetimepicker7'>
+        <input type='text' name="selesaiEvent" class="form-control" />
+        <div class="input-group-append">
+        <span class="input-group-text">
+            <span class="fa fa-calendar"></span>
+        </span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+<label>Basic Pick-a-time</label>
+<div class="input-group">
+    <div class="input-group-prepend">
+    <span class="input-group-text">
+        <span class="ft-clock"></span>
+    </span>
+    </div>
+    <input type='text' class="form-control pickatime" placeholder="Basic Pick-a-time"/>
+</div>
+<small class="text-muted">Use <code>.pickatime</code> class for basic Pick-A-Date Picker.
+</small>
+</div>
+
+<div class="form-group">
+<label>Auto Apply Date Range</label>
+<div class='input-group'>
+    <input type='text' class="form-control autoapply" />
+    <div class="input-group-append">
+    <span class="input-group-text">
+        <span class="fa fa-calendar"></span>
+    </span>
+    </div>
+</div>
+</div>
+
 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
     {!! Form::label('title', 'Judul', ['class'=>'col-md-2 control-label']) !!}
     <div class="col-md-4">
